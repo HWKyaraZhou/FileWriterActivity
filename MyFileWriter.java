@@ -5,8 +5,9 @@ import java.nio.charset.StandardCharsets;
 public class MyFileWriter {
     public static void main(String[] args) {
         String data = "Hello, World!";
-        String fileName1;
         String fileName2 = "example2.txt";
+
+        printFileSize(".gitignore");
 
         // 2. Using BufferedWriter
 
@@ -31,4 +32,14 @@ public class MyFileWriter {
             e.printStackTrace();
         }
     }
+
+    
+    // Calculate and print the file size using the File class
+    private static void printFileSize(String fileName) {
+        File f = new File (fileName);
+        long fSize = f.length();
+        System.out.println("file size: " + fSize);
+    
+    }
+
 }
