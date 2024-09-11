@@ -43,7 +43,7 @@ public class MyFileWriter {
 
     private static void printTotalFileSize(String...fileNames) // String ... allows you to input multiple strings inside
     {
-        System.out.println("Total size of all files: ... tbd bytes.s" );
+        System.out.println("Total size of all files: ... tbd bytes.s?" );
     }
 
 }
