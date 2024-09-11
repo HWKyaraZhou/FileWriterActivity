@@ -31,6 +31,7 @@ public class MyFileWriter {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        printTotalFileSize("example2.txt", ".notAPassword.txt", ".topSecret/classified");
     }
 
     
@@ -41,9 +42,15 @@ public class MyFileWriter {
         System.out.println("file size: " + fSize);
     }
 
-    private static void printTotalFileSize(String...fileNames) // String ... allows you to input multiple strings inside
-    {
-        System.out.println("Total size of all files: ... tbd bytes.s?" );
+    private static void printTotalFileSize(String... fileNames) {
+        long totalSize = 0;
+        for (String fileName : fileNames) {
+            File file = new File(fileName);
+            if (file.exists()) {
+                totalSize += file.length();
+            }
+        }
+        System.out.println("Total size of all files: " + totalSize + " bytes");
     }
 
 }
